@@ -1,0 +1,7 @@
+truongnhon
+hello
+Chuoi s1 co chua chuoi s2:   Khong
+Hai so nguyen duong i,j:    2 4
+Chuoi sau khi xoa:   trgnhon
+Vi tri can chen k= 1
+Chuoi sau khi chen: thellorgnhon

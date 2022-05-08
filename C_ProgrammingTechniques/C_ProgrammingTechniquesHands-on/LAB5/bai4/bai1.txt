@@ -1,0 +1,7 @@
+
+Ma hang don hang la(file): 1
+so luong : 2 	don gia: 3.00 	 Gia tien : 6.00
+Ma hang don hang la(file): 1
+so luong : 2 	don gia: 3.00 	 Gia tien : 6.00
+Ma hang don hang la(file): 3
+so luong : 1 	don gia: 2.00 	 Gia tien : 2.00: 90.00

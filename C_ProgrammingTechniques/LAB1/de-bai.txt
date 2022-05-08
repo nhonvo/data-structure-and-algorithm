@@ -1,0 +1,28 @@
+		BUỔI 1
+Cho mảng 2 chiều gồm n dòng m cột
+- Nhập và xuất mảng 2 chiều
+- Tìm phần tử bé nhất trên mỗi hàng
+-Tìm phần tử lớn nhất trên mỗi cột
+- In ra hàng có số nguyên tố lớn nhất
+
+
+Cho chuỗi kí tự s, hãy lập trình:
+- Đếm số kí tự chữ cái có trong chuỗi
+- Tính tổng các số có trong chuỗi
+- Đếm số từ trong chuỗi
+- Tìm từ dài nhất
+
+		BUỔI 2
+Buổi 2:Cho chuỗi kí tự s, hãy lập trình:
+- Đếm số kí tự chữ cái có trong chuỗi
+- Tính tổng các số có trong chuỗi
+- Đếm số từ trong chuỗi
+- Tìm từ dài nhất
+---------------------------------
+Cho mảng 2 chiều gồm n dòng m cột
+- Nhập và xuất mảng 2 chiều
+- Tìm phần tử bé nhất trên mỗi hàng
+-Tìm phần tử lớn nhất trên mỗi cột
+- In ra hàng có số nguyên tố lớn nhất
+		BUỔI 3
+Chuyển bài tập buổi 1 & 2 sang con trỏ

@@ -1,0 +1,4 @@
+Cau a: 
+	So cac so nguyen to trong mang hai chieu: 13
+Cau b:
+	Gia tri lon nhat tren cac tong cua moi dong:  250

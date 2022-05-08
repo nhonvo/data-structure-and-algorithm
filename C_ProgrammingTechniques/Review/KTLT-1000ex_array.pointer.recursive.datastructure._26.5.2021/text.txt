@@ -1,0 +1,2 @@
+ten	MSSV	gioitinh	diemtoan	diemanh	diemtin	diemtrungbinh
+s	2	x		9.000	8.000	9.000	0.000

@@ -1,0 +1,18 @@
+
+	---b) Tong gia tien cua cac may tinh: 
+May co ma mt03 co tong thanh tien: 82.8
+May co ma mt01 co tong thanh tien: 28.6
+May co ma mt05 co tong thanh tien: 52.5
+May co ma mt04 co tong thanh tien: 46.5
+May co ma mt02 co tong thanh tien: 16.4
+	---c) So may tinh trung voi so nam nhap tu ban phim: 
+mt01 2015 14.300000 2
+mt02 2015 16.400000 1
+Tong co 2 may tinh can tim.
+
+	---d) Sap xep tang dan theo ma may: 
+mt01 2015 14.300000 2
+mt02 2015 16.400000 1
+mt03 2018 20.700001 4
+mt04 2018 15.500000 3
+mt05 2014 10.500000 5

@@ -1,0 +1,105 @@
+ChuaXet[i] = 0, i thuoc X
+LuuVet[i] = -1, i thuoc X
+DoDaiDuongDiToi[S] = 0
+DoDaiDuongDiToi[i] = vc, i thuoc X\S
+----------------------------
+Tim tu dinh 1 -> 2
+----------------------------
+B1: Khoi tao - Chon dinh 1 bat dau.
+DoDaiDuongDiToi[1] = 0 => Cap nhat:
+Dinh		0	1	2	3
+ChuaXet		0	0	0	0
+LuuVet		-1	-1	-1	-1
+DoDaiDDT	vc	0	vc	vc
+----------------------------
+B2: Ket thuc tai dinh cuoi la 2. Dieu kien dung: ChuaXet[2] = 1.
+=> Ma ChuaXet[2] = 0 => tiep tuc.
+----------------------------
+B3: Chon dinh co DO DAI NHO NHAT (voi ChuaXet[dinh] = 0)
+=> Chon dinh 1 (do co DO DAI = 0 & ChuaXet[1] = 0) => ChuaXet[1] = 1.
+=> Cap nhat:
+Dinh		0	1	2	3
+ChuaXet		0	1	0	0
+LuuVet		-1	-1	-1	-1
+DoDaiDDT	vc	0	vc	vc
+----------------------------
+B4: Dinh 1 co duong di den dinh 0 va 3 => Cap nhat + Luu vet:
+Dinh		0	1	2	3
+ChuaXet		0	1	0	0
+LuuVet		1	-1	-1	1
+DoDaiDDT	2	0	vc	6
+----------------------------------------------------------------------
+Quay lai B2:
+B2: Ket thuc tai dinh cuoi la 2. Dieu kien dung: ChuaXet[2] = 1.
+=> Ma ChuaXet[2] = 0 => tiep tuc.
+----------------------------
+B3: Chon dinh co DO DAI NHO NHAT (voi ChuaXet[dinh] = 0)
+Dinh		0	1	2	3
+ChuaXet		0	1	0	0
+LuuVet		1	-1	-1	1
+DoDaiDDT	2	0	vc	6
+=> Chon dinh 0 (do co DO DAI = 2 & ChuaXet[0] = 0) => ChuaXet[0] = 1.
+=> Cap nhat:
+Dinh		0	1	2	3
+ChuaXet		1	1	0	0
+LuuVet		1	-1	-1	1
+DoDaiDDT	2	0	vc	6
+----------------------------
+B4: Tinh DO DAI tu dinh 0 den nhung dinh ChuaXet[dinh] = 0
+=> 0 di den 1 NHUNG ChuaXet[1] = 1.
+=> 0 ko the di den 2.
+=> 0 di den 3 (ChuaXet[3] = 0): Tinh 2+3=5 < 6 (gia tri cu) => Cap nhat + Luu vet:
+Dinh		0	1	2	3
+ChuaXet		1	1	0	0
+LuuVet		1	-1	-1	0
+DoDaiDDT	2	0	vc	5
+----------------------------------------------------------------------
+Quay lai B2:
+B2: Ket thuc tai dinh cuoi la 2. Dieu kien dung: ChuaXet[2] = 1.
+=> Ma ChuaXet[2] = 0 => tiep tuc.
+----------------------------
+B3: Chon dinh co DO DAI NHO NHAT (voi ChuaXet[dinh] = 0)
+Dinh		0	1	2	3
+ChuaXet		1	1	0	0
+LuuVet		1	-1	-1	0
+DoDaiDDT	2	0	vc	5
+=> Chon dinh 3 (do co DO DAI = 5 & ChuaXet[3] = 0) => ChuaXet[3] = 1.
+=> Cap nhat:
+Dinh		0	1	2	3
+ChuaXet		1	1	0	1
+LuuVet		1	-1	-1	0
+DoDaiDDT	2	0	vc	5
+----------------------------
+B4: Tinh DO DAI tu dinh 3 den nhung dinh ChuaXet[dinh] = 0
+=> 3 di den 0 NHUNG ChuaXet[0] = 1.
+=> 3 di den 1 NHUNG ChuaXet[1] = 1.
+=> 3 di den 2 (ChuaXet[2] = 0): Tinh 5+2=7 < vc (gia tri cu) => Cap nhat + Luu vet:
+Dinh		0	1	2	3
+ChuaXet		1	1	0	1
+LuuVet		1	-1	3	0
+DoDaiDDT	2	0	7	5
+----------------------------------------------------------------------
+Quay lai B2:
+B2: Ket thuc tai dinh cuoi la 2. Dieu kien dung: ChuaXet[2] = 1.
+=> Ma ChuaXet[2] = 0 => tiep tuc.
+----------------------------
+B3: Chon dinh co DO DAI NHO NHAT (voi ChuaXet[dinh] = 0)
+Dinh		0	1	2	3
+ChuaXet		1	1	0	1
+LuuVet		1	-1	3	0
+DoDaiDDT	2	0	7	5
+=> Chon dinh 2 (do co DO DAI = 7 & ChuaXet[2] = 0) => ChuaXet[2] = 1.
+=> Cap nhat:
+Dinh		0	1	2	3
+ChuaXet		1	1	1	1
+LuuVet		1	-1	3	0
+DoDaiDDT	2	0	7	5
+-----------------------------
+Do ChuaXet[2] = 1 thoa dieu kien dung => Ket thuc.
+=> Vay: 
+DoDaiDDT = 7
+LuuVet[2] = 3
+LuuVet[3] = 0
+LuuVet[0] = 1
+LuuVet[1] = -1
+=> Duong di 1 -> 0 -> 3 -> 2 (DODAI = 7).

@@ -1,0 +1,5 @@
+3
+4
+B D F R
+B S D W
+W D F R
