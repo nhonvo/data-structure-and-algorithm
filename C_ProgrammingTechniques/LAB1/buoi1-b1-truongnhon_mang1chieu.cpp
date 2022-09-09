@@ -18,20 +18,23 @@ void Xuat_mang(int a[100], int n)
 		printf("\t%d", a[i]);
 }
 
-//xem lai maxchan v minle
+// xem lai maxchan v minle
 int maxchan(int a[], int n)
 {
 	int max = -1;
 	int i;
 	for (int i = 0; i < n; i++)
 	{
-		if(a[i] %2==0){
-			max =a[i];
+		if (a[i] % 2 == 0)
+		{
+			max = a[i];
 		}
 	}
-	for (int j=i+1;j<n;j++){
-		if(a[j] %2 ==0&& a[j]>max){
-			max =a[j];
+	for (int j = i + 1; j < n; j++)
+	{
+		if (a[j] % 2 == 0 && a[j] > max)
+		{
+			max = a[j];
 		}
 	}
 	return max;
@@ -42,18 +45,20 @@ int minle(int a[], int n)
 	int i;
 	for (int i = 0; i < n; i++)
 	{
-		if(a[i] %2!=0){
-			max =a[i];
+		if (a[i] % 2 != 0)
+		{
+			max = a[i];
 		}
 	}
-	for (int j=i+1;j<n;j++){
-		if(a[j] %2 !=0&& a[j]<max){
-			max =a[j];
+	for (int j = i + 1; j < n; j++)
+	{
+		if (a[j] % 2 != 0 && a[j] < max)
+		{
+			max = a[j];
 		}
 	}
 	return max;
 }
-
 
 bool checknt(int n)
 {
@@ -182,7 +187,7 @@ int swap(int &a, int &b)
 	b = tmp;
 }
 int sapxepchangiamdangiuanguyenle(int a[], int n)
-{ //giam dan -chan
+{ // giam dan -chan
 	for (int i = 0; i < n; i++)
 	{
 		if (a[i] % 2 == 0)
@@ -199,7 +204,7 @@ int sapxepchangiamdangiuanguyenle(int a[], int n)
 }
 
 int sapxeplegiuanguyenchan(int a[], int n)
-{ //tang dan -le
+{ // tang dan -le
 	for (int i = 0; i < n - 1; i++)
 	{
 		if (a[i] % 2 != 0)
@@ -238,7 +243,7 @@ void doantang_lt_longest(int a[], int n)
 		printf("\t%d", a[i]);
 }
 
-//co 3 ve: ve 1 sum +=a[i]; ve 2 xet dk sum>sum_max gan lai gtri max; ve 3 xe dk dau 2 so cong voi nhau <0
+// co 3 ve: ve 1 sum +=a[i]; ve 2 xet dk sum>sum_max gan lai gtri max; ve 3 xe dk dau 2 so cong voi nhau <0
 int doantang_lt_summax(int a[], int n)
 {
 	int sum = 0, sum_max = 0;
@@ -283,7 +288,7 @@ int doantang_lt_summax(int a[], int n)
 
 int main()
 {
-	int a[100]; //a[0],a[1],...a[99]
+	int a[100]; // a[0],a[1],...a[99]
 	int n;
 	printf("n =");
 	scanf("%d", &n);
@@ -294,8 +299,8 @@ int main()
 
 	chinhphuong(a, n);
 	nguyento(a, n);
-	
-	maxchan(a,n);
+
+	maxchan(a, n);
 
 	int max = maxchan(a, n);
 	printf("\nChan lon nhat:%d", max);
