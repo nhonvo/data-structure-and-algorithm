@@ -1,0 +1,230 @@
+package tuan02_kethua;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+class HangHoa {
+
+    protected String maHang;
+    protected String tenHang;
+    protected long donGia;
+
+    public HangHoa() {
+        maHang = "";
+        tenHang = "";
+        donGia = 0;
+    }
+
+    public HangHoa(String maHang, String tenHang, long donGia) {
+        this.maHang = maHang;
+        this.tenHang = tenHang;
+        this.donGia = donGia;
+    }
+
+    public String getMaHang() {
+        return maHang;
+    }
+
+    public String getTenHang() {
+        return tenHang;
+    }
+
+    public double getDonGia() {
+        return donGia;
+    }
+
+    public void setMaHang(String maHang) {
+        this.maHang = maHang;
+    }
+
+    public void setTenHang(String tenHang) {
+        this.tenHang = tenHang;
+    }
+
+    public void setDonGia(long donGia) {
+        this.donGia = donGia;
+    }
+
+    public void nhapHH() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Mã hàng: ");
+        maHang = sc.nextLine();
+        System.out.println("Tên hàng: ");
+        tenHang = sc.nextLine();
+        System.out.println("Đơn giá: ");
+        donGia = sc.nextLong();
+    }
+
+    public void xuatHH() {
+        System.out.println("Mã hàng: " + maHang);
+        System.out.println("Tên hàng: " + tenHang);
+        System.out.println("Đơn giá: " + donGia);
+    }
+}
+
+class HangDienMay extends HangHoa {
+
+    private int tgBaoHanh;
+    private int congSuat;
+    private int dienAp;
+
+    public HangDienMay() {
+        super();
+        tgBaoHanh = 0;
+        congSuat = 0;
+        dienAp = 0;
+    }
+
+    public HangDienMay(String ma, String ten, long dg, int tgBaoHanh, int congSuat, int dienAp) {
+        super(ma, ten, dg);
+        this.tgBaoHanh = tgBaoHanh;
+        this.congSuat = congSuat;
+        this.dienAp = dienAp;
+    }
+
+
+    @Override
+    public void nhapHH() {
+        super.nhapHH();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Thời gian bảo hành: ");
+        tgBaoHanh = sc.nextInt();
+        System.out.println("Công suất: ");
+        congSuat = sc.nextInt();
+        System.out.println("Điện áp: ");
+        dienAp = sc.nextInt();
+    }
+
+    @Override
+    public void xuatHH() {
+        super.xuatHH();
+        System.out.println("Thời gian bảo hành: " + tgBaoHanh);
+        System.out.println("Công suất: " + congSuat);
+        System.out.println("Điện áp: " + dienAp);
+    }
+}
+
+class HangThucPham extends HangHoa {
+
+    private String ngaySX;
+    private String ngayHH;
+
+    public HangThucPham() {
+        super();
+        ngaySX = "";
+        ngayHH = "";
+    }
+
+    public HangThucPham(String ma, String ten, long dg, String nsx, String nhh) {
+        super(ma, ten, dg);
+        this.ngaySX = nsx;
+        this.ngayHH = nhh;
+    }
+
+    @Override
+    public void nhapHH() {
+        super.nhapHH();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ngày sản xuất: ");
+        ngaySX = sc.nextLine();
+        System.out.println("Ngày hết hạn: ");
+        ngayHH = sc.nextLine();
+    }
+
+    @Override
+    public void xuatHH() {
+        super.xuatHH();
+        System.out.println("Ngày sản xuất: " + ngaySX);
+        System.out.println("Ngày hết hạn:" + ngayHH);
+
+    }
+}
+
+class DanhSachHH {
+
+    private HangHoa dshh[];
+    private int slg;
+
+    public DanhSachHH() {
+        dshh = null;
+        slg = 0;
+    }
+
+    public void themMH(HangHoa hh) {
+        slg++;
+        if(dshh == null){
+            dshh = new HangHoa[slg];
+            dshh[slg - 1] = hh;
+        }else{
+            HangHoa[] temp = new HangHoa[slg];
+            System.arraycopy(dshh, 0, temp, 0, dshh.length);
+            temp[slg - 1] = hh;
+            dshh = temp;
+        }
+    }
+
+    public void xuatTheoLoai(String loai) {
+        for(int i = 0; i < slg; i++){
+            if(dshh[i].getClass().getName().indexOf(loai) > -1){
+                //System.out.println(dshh[i].getClass().getName());
+                dshh[i].xuatHH();
+            }
+        }
+    }
+}
+
+class HH_Main {
+
+    public static void main(String[] args) {
+        
+        byte chon;
+        Scanner doc = new Scanner(System.in);
+        //DanhSachHH dshh = new DanhSachHH();
+        //sử dụng ArrayList
+        ArrayList<HangHoa> dshh = new ArrayList<>();
+        do {
+            System.out.println("1: Them mot mat hang vao dang sach");
+            System.out.println("2: Xuat mat hang theo loai");
+            System.out.println("0: Thoat");
+            
+            System.out.println("Mời chọn chức năng:");
+            chon = doc.nextByte();
+            switch (chon) {
+                case 1:
+                    System.out.println("1: Hang dien may, 2: Hang thuc pham. Moi chon loai mat hang: ");
+                    byte loai = doc.nextByte();
+                    
+                    HangHoa h;
+                    if (loai == 1) {
+                        h = new HangDienMay();
+                    } else {
+                        h = new HangThucPham();
+                    }
+                    h.nhapHH();
+                    //dshh.themMH(h);
+                    dshh.add(h);//sử dụng ArrayList
+                    break;
+                case 2:
+                    System.out.println("Xuat danh sach mat hang nao:");
+                    System.out.println("Mời gõ DienMay hoặc ThucPham: ");
+                    doc = new Scanner(System.in);
+                    String loaimh = doc.nextLine();
+                    //item la cai ten dat thoi, muon dat gi dat, forEach chỉ sử dụng trong ArrayList
+                    dshh.forEach((item) -> {
+                        if (item.getClass().getName().indexOf(loaimh) > -1) {
+                            item.xuatHH();
+                        }
+                    });
+                    for(HangHoa hh : dshh){
+                       //1 cach xuat 
+                    }
+                        //dshh.xuatTheoLoai(loaimh);
+                        break;                             
+            default:
+                    chon = 0;
+                    break;
+            }
+        } while (chon != 0);
+        }
+}
